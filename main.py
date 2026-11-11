@@ -1,5 +1,19 @@
 from libro import Libro
 
+def intentar_prestar(libro):
+    try:
+        libro.prestar()
+        print(f"Préstamo realizado: {libro.titulo}")
+    except ValueError as error:
+        print(f"Préstamo rechazado: {error}")
+
+def intentar_devolver(libro):
+    try:
+        libro.devolver()
+        print(f"Devolución realizada: {libro.titulo}")
+    except ValueError as error:
+        print(f"Devolución rechazada: {error}")
+
 def main():
     libros = [
         Libro("La colmena", "Camilo José Cela", 1951),
@@ -8,8 +22,12 @@ def main():
         Libro("Nada", "Carmen Laforet", 1945),
         Libro("La familia de Pascual Duarte", "Camilo José Cela", 1942)
     ]
-    for libro in libros:
-        print(libro.titulo, libro.autor, libro.anio)
+    
+    libro = libros[1]
+    intentar_prestar(libro)
+    intentar_prestar(libro)
+    intentar_devolver(libro)
+    intentar_devolver(libro)
 
 if __name__ == "__main__":
     main()
