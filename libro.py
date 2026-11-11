@@ -29,3 +29,7 @@ class Libro:
         if self.disponible:
             raise ValueError("El libro ya está disponible")
         self.disponible = True
+        
+    @property
+    def es_antiguo(self):
+        return self.anio < 1950

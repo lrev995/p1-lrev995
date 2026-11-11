@@ -37,5 +37,8 @@ def main():
     except ValueError as error:
         print(f"Error al crear el libro: {error}")
 
+    reciente = Libro("Ejemplo reciente", "Autor de ejemplo", 2022)
+    print("¿Es antiguo el libro reciente?:", reciente.es_antiguo)
+
 if __name__ == "__main__":
     main()
