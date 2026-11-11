@@ -31,5 +31,11 @@ def main():
 
     print("Total de libros creados:", Libro.total_libros)
 
+    try:
+        nuevo_libro = Libro("", "Miguel de Unamuno", 1914)
+        libros.append(nuevo_libro)
+    except ValueError as error:
+        print(f"Error al crear el libro: {error}")
+
 if __name__ == "__main__":
     main()

@@ -8,6 +8,18 @@ class Libro:
         self.disponible = True
         Libro.total_libros += 1
 
+    @property
+    def titulo(self):
+        return self._titulo
+
+    @titulo.setter
+    def titulo(self, nuevo_titulo):
+        if not isinstance(nuevo_titulo, str):
+            raise TypeError("El título debe ser texto")
+        if not nuevo_titulo.strip():
+            raise ValueError("El título no puede estar vacío")
+        self._titulo = nuevo_titulo.strip()
+
     def prestar(self):
         if not self.disponible:
             raise ValueError("El libro ya está prestado")
