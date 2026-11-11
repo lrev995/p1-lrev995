@@ -33,3 +33,16 @@ class Libro:
     @property
     def es_antiguo(self):
         return self.anio < 1950
+    
+    def __str__(self):
+        estado = "Disponible" if self.disponible else "Prestado"
+        return f"{self.titulo} - {self.autor} ({self.anio}) [{estado}]"
+
+    def __eq__(self, otro):
+        if not isinstance(otro, Libro):
+            return NotImplemented
+        return (
+            self.titulo == otro.titulo
+            and self.autor == otro.autor
+            and self.anio == otro.anio
+        )

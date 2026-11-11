@@ -39,6 +39,10 @@ def main():
 
     reciente = Libro("Ejemplo reciente", "Autor de ejemplo", 2022)
     print("¿Es antiguo el libro reciente?:", reciente.es_antiguo)
+    
+    otro_libro = Libro("Nada", "Carmen Laforet", 1945)
+    print("Comparación ==:", libros[3] == otro_libro)
+    print("Comparación is:", libros[3] is otro_libro)
 
 if __name__ == "__main__":
     main()
