@@ -43,6 +43,19 @@ def main():
     otro_libro = Libro("Nada", "Carmen Laforet", 1945)
     print("Comparación ==:", libros[3] == otro_libro)
     print("Comparación is:", libros[3] is otro_libro)
+    
+    print("\n--- Ordenados por año ---")
+    libros_ordenados = sorted(libros, key=lambda libro: libro.anio)
+    for libro in libros_ordenados:
+        print(libro)
+
+    print("\n--- Títulos disponibles ---")
+    titulos_disponibles = map(
+        lambda libro: libro.titulo,
+        filter(lambda libro: libro.disponible, libros)
+    )
+    for titulo in titulos_disponibles:
+        print(titulo)
 
 if __name__ == "__main__":
     main()
