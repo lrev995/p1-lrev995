@@ -29,5 +29,7 @@ def main():
     intentar_devolver(libro)
     intentar_devolver(libro)
 
+    print("Total de libros creados:", Libro.total_libros)
+
 if __name__ == "__main__":
     main()
